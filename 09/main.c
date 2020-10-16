@@ -34,6 +34,13 @@ char buscaPrimeiraMaiscula(char * stringToda, int count) {
     } else return 0;
 }
 
+void imprimeResultados (char * frase, char resposta) {
+    if (resposta != 0)
+        printf("\nA primeira letra maiuscula que aparece na string %s eh: %c", frase, resposta);
+    else
+        printf("\nNao foi encontrada nenhuma maiuscula em %s\n", frase);
+}
+
 int main()
 {
     char frase[100];
@@ -47,10 +54,7 @@ int main()
         char resposta = buscaPrimeiraMaiscula(frase, 0);
 
         // impressao do resultado
-        if (resposta != 0)
-            printf("\nA primeira letra maiuscula que aparece na string %s eh: %c", frase, resposta);
-        else
-            printf("\nNao foi encontrada nenhuma maiuscula em %s\n", frase);
+        imprimeResultados(frase, resposta);
 
     } while (strcmp(frase, "fim"));
 
